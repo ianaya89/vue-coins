@@ -5,12 +5,12 @@
       <thead>
         <tr>
           <th>Simbolo</th>
-          <th>Nombre</th>
+          <th><input type="text" v-model="search" placeholder="Buscar..." aria-label="Buscar..."></th>
           <th>Precio</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="a in assets" :key="a.id">
+        <tr v-for="a in filteredAssets" :key="a.id">
           <td>{{ a.symbol }}</td>
           <td>{{ a.name }}</td>
           <td>$ {{ parseFloat(a.priceUsd).toFixed(2) }}</td>
@@ -19,6 +19,7 @@
     </table>
   </section>
 </template>
+
 <script>
 import { getAssets } from '@/services/coincap'
 
@@ -27,8 +28,26 @@ export default {
 
   data () {
     return {
+      search: '',
       assets: [],
       isLoading: true
+    }
+  },
+
+  computed: {
+    filteredAssets () {
+      if (!this.search) {
+        return this.assets
+      }
+
+      return this.assets
+        .filter(a => a.name.toLowerCase().includes(this.search.toLowerCase()))
+    }
+  },
+
+  watch: {
+    filteredAssets (newVal) {
+      console.log(`Se encontraron ${newVal.length} assets`)
     }
   },
 
