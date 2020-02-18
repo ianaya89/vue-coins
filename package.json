@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "whatwg-fetch": "3.0.0"
   },
   "devDependencies": {
+    "@ianaya89/vue-cli-plugin-workshop": "~1.0.6",
     "@vue/cli-plugin-babel": "~4.2.0",
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
