@@ -1,11 +1,44 @@
 <template>
   <section tabindex="0">
+    <p v-if="isLoading">Cargando...</p>
+    <table v-else>
+      <thead>
+        <tr>
+          <th>Simbolo</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="a in assets" :key="a.id">
+          <td>{{ a.symbol }}</td>
+          <td>{{ a.name }}</td>
+          <td>$ {{ parseFloat(a.priceUsd).toFixed(2) }}</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </template>
-
 <script>
+import { getAssets } from '@/services/coincap'
+
 export default {
-  name: 'CoinList'
+  name: 'CoinList',
+
+  data () {
+    return {
+      assets: [],
+      isLoading: true
+    }
+  },
+
+  created () {
+    getAssets()
+      .then(({ data }) => {
+        this.assets = data
+        this.isLoading = false
+      })
+  }
 }
 </script>
 
