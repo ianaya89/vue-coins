@@ -12,6 +12,7 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@ianaya89/vue-cli-plugin-workshop": "~1.0.10",
     "@vue/cli-plugin-babel": "~4.2.0",
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
