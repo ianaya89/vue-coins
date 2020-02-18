@@ -1,28 +1,54 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav>
+      <span>💸 Vue Coins</span>
+    </nav>
+
+    <main>
+      <CoinList/>
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CoinList from './components/CoinList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CoinList
   }
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  height: 70px;
+  background-color: #64B587;
+  color: #3C495B;
+}
+
+nav span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
 }
 </style>
