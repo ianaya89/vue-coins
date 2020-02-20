@@ -1,24 +1,30 @@
 # vue-coins
+> 💸 Proyecto usado en el workshop de Vue.js para principiantes
 
-## Project setup
+> Si te interesa aprender mas de Vue.js podes checar el [workshop](https://github.com/ianaya89/workshop-vuejs), es gratis!
+
+## Setup del proyecto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Correr en modo de desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilar para produccion
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Detectar y arreglar errores de formato
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+---
+Cualquier consulta, critica, PR o sugerencia es totalmente bienvenida.
+Gracias por acompañarme en este Workshop!
+
+**⌨️ with ❤️ by [@ianaya89](https://twitter.com/ianaya89)**
